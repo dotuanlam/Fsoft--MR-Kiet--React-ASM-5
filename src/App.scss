@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  .App{
+    background: linear-gradient(to right bottom, #e1b382,#c89666);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .btn-logout{
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    padding: 1rem 2rem;
+    background-color: #12343b;
+    border-radius: 10rem;
+    color: white;
+    font-weight: 600;
+    opacity: .8;
+  }
+  .btn-logout:hover{
+    opacity: 1;
+  }
+  .btn-logout:active{
+    background-color: #021c21;
+  }
+}

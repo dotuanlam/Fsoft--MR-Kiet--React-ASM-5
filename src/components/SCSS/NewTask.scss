@@ -1,0 +1,114 @@
+.new-task {
+  background-color: #12343b;
+  width: 30rem;
+  min-height: 30rem;
+  border-radius: 10px;
+  padding: 30px;
+  flex: 1 1 30rem;
+
+  .title {
+    text-align: center;
+    color: #ccc;
+  }
+  .form-input {
+    h3 {
+      color: #ccc;
+    }
+    input {
+      padding: 1rem 2rem;
+      width: -webkit-fill-available;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    input:focus {
+      outline: none;
+    }
+  }
+  .react-date-picker__wrapper {
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  .select-level{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    .btn{
+        width: 8rem;
+        padding: 1rem;
+        border-radius: 10px;
+        border: none;
+    }
+    .btn:hover{
+       opacity: 1;
+       width: 9rem;
+    }
+    .button-high{
+        background-color: rgb(255, 0, 0);
+        opacity: 0.5;
+        color: #ccc;
+        font-weight: 700;
+    }
+    .button-medium{
+        background-color: #cedf09;
+        opacity: 0.5;
+        color: #12343b;
+        font-weight: 700;
+    }
+    .button-low{
+        background-color: hsl(148, 100%, 31%);
+        opacity: 0.5;
+        color: #ccc;
+        font-weight: 700;
+    }
+  }
+  .selected-level{
+     
+     margin-top: 2rem;
+     text-align: center;
+     .High{
+         background-color: red;
+         padding: 1rem  3rem;
+         border-radius: 10px;
+         outline: none;
+         border: none;
+         color: #ccc;
+         font-weight: 800;
+     }
+     .Medium{
+        background-color:  #cedf09;
+        padding: 1rem  3rem;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        color: #12343b;
+        font-weight: 800;
+     }
+     .Low{
+        background-color:  hsl(148, 100%, 31%);
+        padding: 1rem  3rem;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        color: #ccc;
+        font-weight: 800;
+     }
+  }
+  .add-task{
+     margin-top: 3rem;
+      background-color: red;
+     padding: 1.5rem ;
+     width: 100%;
+     border-radius: 10px;
+     border: none;
+     color: #ccc;
+     font-weight: 800;
+     font-size: 1.5rem;
+     background-color: #c89666;
+  }
+  .add-task:hover{
+    background-color:#ff7b00;
+  }
+}
