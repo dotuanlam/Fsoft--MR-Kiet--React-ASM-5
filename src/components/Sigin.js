@@ -1,31 +1,30 @@
 import { replace } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-
+import { object } from "yup";
 import "./SCSS/SignIn.scss";
 
 const Login = () => {
   const navigate = useNavigate();
-  localStorage.setItem("Token", false);
-  const account = { ...localStorage };
-  const nameInLocal = Object.keys(account);
-  const passwordInLocal = Object.values(account);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const handleNameChanged = (e) => {
     setName(e.target.value);
   };
+  localStorage.setItem("Token", false);
   const handlePassWordChanged = (e) => {
     setPassword(e.target.value);
   };
 
   const onLogin = () => {
-    for (let i = 0; i < nameInLocal.length; i++) {
-      if (name === nameInLocal[i] && password === passwordInLocal[i]) {
+    const account = { ...localStorage };
+    const keys = Object.keys(account);
+    const values = Object.values(account);
+    for (let i = 0; i < keys.length; i++) {
+      if (keys[i] === name && values[i] === password) {
+        console.log(true);
         localStorage.setItem("Token", true);
-        navigate("/");
-      } else {
-        navigate("/login");
+        return navigate("/");
       }
     }
   };
@@ -45,10 +44,10 @@ const Login = () => {
         </div>
         <div className="input-password">
           <label>Password</label>
-          <input onChange={handlePassWordChanged} type="text" />
+          <input onChange={handlePassWordChanged} type="password" />
         </div>
         <div className="btn-sign-in">
-          <button onClick={onLogin} type="submit">
+          <button onClick={() => onLogin(name)} type="submit">
             Sign in
           </button>
         </div>
