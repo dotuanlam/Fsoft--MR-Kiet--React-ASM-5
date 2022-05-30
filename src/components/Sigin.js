@@ -2,10 +2,12 @@ import { replace } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { object } from "yup";
+import ErrorsSigin from "./SignInErrors";
 import "./SCSS/SignIn.scss";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [errors, setErrors] = useState(false)
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const handleNameChanged = (e) => {
@@ -25,6 +27,8 @@ const Login = () => {
         console.log(true);
         localStorage.setItem("Token", true);
         return navigate("/");
+      }else{
+        setErrors(true)
       }
     }
   };
@@ -46,6 +50,7 @@ const Login = () => {
           <label>Password</label>
           <input onChange={handlePassWordChanged} type="password" />
         </div>
+        {errors && <ErrorsSigin/>}
         <div className="btn-sign-in">
           <button onClick={() => onLogin(name)} type="submit">
             Sign in
